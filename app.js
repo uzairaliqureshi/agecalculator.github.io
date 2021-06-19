@@ -2,7 +2,7 @@ var prompt1 = prompt("enter your birth Date \n(for example : 16)");
 var prompt2 = prompt(
   "enter your birth Month \n(for example : jan , january , 01 , 1 whatever you like)"
 );
-var prompt3 = prompt("enter your birth Year \n(for example : 1969)");
+var prompt3 = +prompt("enter your birth Year \n(for example : 1969)");
 prompt2.toLowerCase;
 if (
   prompt2 === "jan" ||
@@ -84,7 +84,7 @@ if (
 ) {
   prompt2 = 11;
 } else {
-  alert("please define date correctly ");
+  alert("please define month correctly ");
 }
 var dob = new Date();
 dob.setDate(prompt1);
@@ -95,15 +95,15 @@ var mstoday = today.getTime();
 var msdob = dob.getTime();
 var age = mstoday - msdob;
 var year = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
-var date = new Date("january 1, 1970")
-var date1 = 1970 + year
-date.setFullYear(date1)
+var date = new Date("january 1, 1970");
+var date1 = 1970 + year;
+date.setFullYear(date1);
 var msdate = date.getTime();
 var month = age - msdate;
-var months = Math.floor(month / (1000 * 60 * 60 * 24 * 30))
+var months = Math.floor(month / (1000 * 60 * 60 * 24 * 30));
 var day = msdate + months;
 var days1 = age - day;
-var days = Math.floor(days1 / (1000 * 60 * 60 * 24 * 24))
+var days = Math.floor(days1 / (1000 * 60 * 60 * 24 * 24));
 alert(
-    "your age is " + year + " years " + months + " months and " + days + " days"
-  );
+  "your age is " + year + " years " + months + " months and " + days + " days"
+);

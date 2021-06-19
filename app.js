@@ -105,5 +105,5 @@ var day = msdate + months;
 var days1 = age - day;
 var days = Math.floor(days1 / (1000 * 60 * 60 * 24 * 24))
 alert(
-    "your age is " + year + " years " + months + " months " + days + " days"
+    "your age is " + year + " years " + months + " months and " + days + " days"
   );

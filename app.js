@@ -102,4 +102,4 @@ var msdate = date.getTime();
 var month = age - msdate;
 var months = Math.floor(month / (1000 * 60 * 60 * 24 * (365.25/12)));
 var days = Math.floor((age - (year * 365.25 * 24 * 3600 * 1000) - (months * (365.25/12) * 24 * 3600 * 1000)) / (3600000 * 24))
-alert(`your age is ${year} years ${months} months and ${days} days`)
+alert(`your age is \n${year} years \n${months} months \n${days} days`)

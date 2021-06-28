@@ -101,5 +101,11 @@ date.setFullYear(date1);
 var msdate = date.getTime();
 var month = age - msdate;
 var months = Math.floor(month / (1000 * 60 * 60 * 24 * (365.25/12)));
-var days = Math.floor((age - (year * 365.25 * 24 * 3600 * 1000) - (months * (365.25/12) * 24 * 3600 * 1000)) / (3600000 * 24))
-alert(`your age is \n${year} years \n${months} months \n${days} days`)
+var msyear = year * 365.25 * 24 * 3600 * 1000
+var msmonth = months * (365.25/12) * 24 * 3600 * 1000
+var msdays = age - msyear - msmonth 
+var day = Math.floor(msdays / (1000 * 60 * 60 * 24))
+
+console.log(msyear)
+console.log(msmonth)
+alert(`your age is \n${year} years \n${months} months \n${day} days`)

@@ -1,111 +1,35 @@
-var prompt1 = prompt("enter your birth Date \n(for example : 16)");
-var prompt2 = prompt(
-  "enter your birth Month \n(for example : jan , january , 01 , 1 whatever you like)"
-);
-var prompt3 = +prompt("enter your birth Year \n(for example : 1969)");
-prompt2.toLowerCase;
-if (
-  prompt2 === "jan" ||
-  prompt2 === "january" ||
-  prompt2 === "01" ||
-  prompt2 === "1"
-) {
-  prompt2 = 0;
-} else if (
-  prompt2 === "feb" ||
-  prompt2 === "february" ||
-  prompt2 === "02" ||
-  prompt2 === "2"
-) {
-  prompt2 = 1;
-} else if (
-  prompt2 === "mar" ||
-  prompt2 === "march" ||
-  prompt2 === "03" ||
-  prompt2 === "3"
-) {
-  prompt2 = 2;
-} else if (
-  prompt2 === "apr" ||
-  prompt2 === "april" ||
-  prompt2 === "04" ||
-  prompt2 === "4"
-) {
-  prompt2 = 3;
-} else if (prompt2 === "may" || prompt2 === "05" || prompt2 === "5") {
-  prompt2 = 4;
-} else if (
-  prompt2 === "jun" ||
-  prompt2 === "june" ||
-  prompt2 === "06" ||
-  prompt2 === "6"
-) {
-  prompt2 = 5;
-} else if (
-  prompt2 === "" ||
-  prompt2 === "july" ||
-  prompt2 === "07" ||
-  prompt2 === "7"
-) {
-  prompt2 = 6;
-} else if (
-  prompt2 === "aug" ||
-  prompt2 === "august" ||
-  prompt2 === "08" ||
-  prompt2 === "8"
-) {
-  prompt2 = 7;
-} else if (
-  prompt2 === "sep" ||
-  prompt2 === "september" ||
-  prompt2 === "09" ||
-  prompt2 === "9"
-) {
-  prompt2 = 8;
-} else if (
-  prompt2 === "oct" ||
-  prompt2 === "october" ||
-  prompt2 === "10" ||
-  prompt2 === "10"
-) {
-  prompt2 = 9;
-} else if (
-  prompt2 === "nov" ||
-  prompt2 === "november" ||
-  prompt2 === "11" ||
-  prompt2 === "11"
-) {
-  prompt2 = 10;
-} else if (
-  prompt2 === "dec" ||
-  prompt2 === "december" ||
-  prompt2 === "12" ||
-  prompt2 === "12"
-) {
-  prompt2 = 11;
-} else {
-  alert("please define month correctly ");
+function calculation() {
+  let date = document.getElementById('date');
+  let month = document.getElementById('month');
+  let year = document.getElementById('year');
+  let arr = ["jan", "feb", "mar", "apr", "may", "jun", "july", "aug", "sep", "oct", "nov", "dec"]
+  let arr2 = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
+  let arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == month.value || arr2[i] == month.value || arr3[i] == month.value)
+      month.value = i;
+  }
+  let dob = new Date();
+  dob.setDate(date.value);
+  dob.setMonth(month.value);
+  dob.setFullYear(year.value);
+  let today = new Date();
+  let msToday = today.getTime();
+  let msDob = dob.getTime();
+  let msAge = msToday - msDob;
+  let ageInYear = Math.floor(msAge / (1000 * 60 * 60 * 24 * 365.25));
+  let msYear = ageInYear * 365.25 * 24 * 3600 * 1000
+  let msMonth = msAge - msYear;
+  let months = Math.floor(msMonth / (1000 * 60 * 60 * 24 * (365.25 / 12)));
+  let msmonth = months * (365.25 / 12) * 24 * 3600 * 1000
+  let msdays = msAge - msYear - msmonth
+  let days = Math.floor(msdays / (1000 * 60 * 60 * 24))
+  if (date.value && month.value && year.value) {
+    document.getElementById('result').value = `${ageInYear} y ${months} m ${days} d`
+  } else{
+    document.getElementById('result').value = `enter your DOB`
+  }
+  date.value = '';
+  month.value = '';
+  year.value = '';
 }
-var dob = new Date();
-dob.setDate(prompt1);
-dob.setMonth(prompt2);
-dob.setFullYear(prompt3);
-var today = new Date();
-var mstoday = today.getTime();
-var msdob = dob.getTime();
-var age = mstoday - msdob;
-var year = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
-var date = new Date("january 1, 1970");
-var date1 = 1970 + year;
-date.setFullYear(date1);
-var msdate = date.getTime();
-var month = age - msdate;
-var months = Math.floor(month / (1000 * 60 * 60 * 24 * (365.25/12)));
-var msyear = year * 365.25 * 24 * 3600 * 1000
-var msmonth = months * (365.25/12) * 24 * 3600 * 1000
-var msdays = age - msyear - msmonth 
-var day = Math.floor(msdays / (1000 * 60 * 60 * 24))
-
-console.log(msyear)
-console.log(msmonth)
-alert(`your age is \n${year} years \n${months} months \n${day} days`)

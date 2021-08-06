@@ -27,7 +27,7 @@ function calculation() {
   if (date.value && month.value && year.value) {
     document.getElementById('result').value = `${ageInYear} y ${months} m ${days} d`
   } else{
-    document.getElementById('result').value = `enter your DOB`
+    document.getElementById('result').value = ''
   }
   date.value = '';
   month.value = '';

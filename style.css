@@ -16,9 +16,10 @@
     font-family: "Arvo", cursive;
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     background-color: #2D2D2D;
+    text-align: center;
   }
 
   .ageField {
@@ -37,7 +38,7 @@
   }
 
   button {
-    width: 22%;
+    width: 10rem ;
     height: 50px;
     border: none;
     font-size: 1.2rem;

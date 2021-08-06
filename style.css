@@ -33,6 +33,7 @@
     border-radius: 7px;
     text-align: center;
     margin: 2rem 0 0 0;
+    box-shadow: 5px 8px 8px -2px rgba(0, 0, 0, 0.61)
   }
 
   button {
@@ -44,6 +45,7 @@
     background-color: #1A73E8;
     border-radius: 7px;
     margin: 2rem 0 0 0;
+    box-shadow: 5px 8px 8px -2px rgba(0, 0, 0, 0.61)
   }
 
   .button:active {

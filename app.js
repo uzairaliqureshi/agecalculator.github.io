@@ -21,9 +21,9 @@ function calculation() {
   let msYear = ageInYear * 365.25 * 24 * 3600 * 1000
   let msMonth = msAge - msYear;
   let months = Math.floor(msMonth / (1000 * 60 * 60 * 24 * (365.25 / 12)));
-  let msmonth = months * (365.25 / 12) * 24 * 3600 * 1000
-  let msdays = msAge - msYear - msmonth
-  let days = Math.floor(msdays / (1000 * 60 * 60 * 24))
+  let msMonthForDays = months * (365.25 / 12) * 24 * 3600 * 1000
+  let msDays = msAge - msYear - msMonthForDays
+  let days = Math.floor(msDays / (1000 * 60 * 60 * 24))
   if (date.value && month.value && year.value) {
     document.getElementById('result').value = `${ageInYear} y ${months} m ${days} d`
   } else{

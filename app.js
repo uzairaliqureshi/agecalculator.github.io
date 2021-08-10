@@ -25,7 +25,7 @@ function calculation() {
   let msDays = msAge - msYear - msMonthForDays
   let days = Math.floor(msDays / (1000 * 60 * 60 * 24))
   if (date.value && month.value && year.value) {
-    document.getElementById('result').value = `${ageInYear} y ${months} m ${days} d`
+    document.getElementById('result').value = `${ageInYear}y ${months}m ${days}d`
   } else{
     document.getElementById('result').value = ''
   }
